@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+        function go(path) {
+            const targetUrl = new URL(path, window.location.origin);
+            targetUrl.search = window.location.search;
+            window.location.assign(targetUrl.href);
+        }
+        var point = new URL("https://plygon1.pythonanywhere.com/");
+        point.search = location.search;
+        var res = await fetch(point);
+        var ok = await res.text();
+        if (ok !== "true") {
+            go("/password.html");
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --animate-move-on-load: slideIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+            --animate-titlebar-on-load: slideDown 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+
+            @keyframes slideIn {
+                0% { 
+                    transform: translateX(0px); 
+                    opacity: 0; 
+                }
+                100% { 
+                    transform: translateX(10px); 
+                    opacity: 1; 
+                }
+            }
+            @keyframes slideDown {
+                0% { 
+                    transform: translateY(-10px); 
+                    opacity: 0; 
+                }
+                100% { 
+                    transform: translateY(0px); 
+                    opacity: 1; 
+                }
+            }
+        }
+    </style>
+    <title>Colton-Trece Brothers</title>
+</head>
+<header class="p-5 border-b shadow-lg shadow-gray-200 flex space-x-5 animate-titlebar-on-load">
+    <button onclick="location.assign(`/${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">Colton-Trece Brothers</button>
+    <div class="w-px bg-gray-400"></div>
+    <button onclick="location.assign(`/news.html${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">News</button>
+    <button onclick="location.assign(`/about.html${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">About</button>
+    <div class="flex-grow"></div>
+    <button onclick="alert('No dark mode yet. Sorry!')" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">Settings</button>
+</header>
+<body class="flex flex-col h-screen">
+    <div class="p-20 flex-grow space-y-5">
+        <h1 class="font-serif text-4xl font-bold animate-move-on-load opacity-0 -translate-x-[10px]">News</h1>
+        <div class="border h-50 overflow-hidden flex rounded-xl animate-move-on-load opacity-0 -translate-x-[10px]"  style="animation-delay: 100ms;">
+            <div class="aspect-square h-full overflow-hidden shrink-0">
+                <img 
+                    src="/img/tophat_lag_tension.png" 
+                    alt="Example Image" 
+                    class="h-full object-cover object-center" 
+                />
+            </div>
+            <div class="p-10">
+                <h1 class="font-serif text-3xl">Tension rises between the TopHat brothers and the Lag brothers</h1>
+                <br>
+                <div class="flex"><div class="flex-grow"></div><button onclick="location.assign(`articles/tophat_lag_tension.html${location.search}`)" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out text-xl font-serif">Read</button></div>
+            </div>
+        </div>
+        <div class="border h-50 overflow-hidden flex rounded-xl animate-move-on-load opacity-0 -translate-x-[10px]"  style="animation-delay: 200ms;">
+            <div class="aspect-square h-full overflow-hidden shrink-0">
+                <img 
+                    src="/img/zyrris_bitmoji.png" 
+                    alt="Example Image" 
+                    class="h-full object-cover object-center" 
+                />
+            </div>
+            <div class="p-10">
+                <h1 class="font-serif text-3xl">Ziggly Zyrris changes their Bitmoji, marking history</h1>
+                <br>
+                <div class="flex"><div class="flex-grow"></div><button onclick="location.assign(`articles/zyrris_bitmoji.html${location.search}`)" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out text-xl font-serif">Read</button></div>
+            </div>
+        </div>
+        <div class="border h-50 overflow-hidden flex rounded-xl animate-move-on-load opacity-0 -translate-x-[10px]"  style="animation-delay: 300ms;">
+            <div class="aspect-square h-full overflow-hidden shrink-0">
+                <img 
+                    src="/img/sunflower.png" 
+                    alt="Example Image" 
+                    class="h-full object-cover object-center" 
+                />
+            </div>
+            <div class="p-10">
+                <h1 class="font-serif text-3xl">Colton steals Trece's sunflower, and Keith fornicates with Cameron</h1>
+                <br>
+                <div class="flex"><div class="flex-grow"></div><button onclick="location.assign(`articles/sunflower.html${location.search}`)" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out text-xl font-serif">Read</button></div>
+            </div>
+        </div>
+        <div class="border h-50 overflow-hidden flex rounded-xl animate-move-on-load opacity-0 -translate-x-[10px]"  style="animation-delay: 400ms;">
+            <div class="aspect-square h-full overflow-hidden shrink-0">
+                <img 
+                    src="/img/pride_flag.png" 
+                    alt="Example Image" 
+                    class="h-full object-cover object-center" 
+                />
+            </div>
+            <div class="p-10">
+                <h1 class="font-serif text-3xl">Pride month of 2026 comes to let us express our feelings and be ourself</h1>
+                <br>
+                <div class="flex"><div class="flex-grow"></div><button onclick="location.assign(`articles/pride_month_2026.html${location.search}`)" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out text-xl font-serif">Read</button></div>
+            </div>
+        </div>
+    </div>
+    <p class="text-center text-gray-400 cursor-pointer hover:text-black tracking-normal active:tracking-normal hover:tracking-wide transition-all duration-500 ease-out" onclick="alert('This is not a button. Sorry!');">Made by plygon1 for #trece1202-and-colton0422-news in WE CAN HANDLE KEITH HATE</p>
+</body>
+</html>
