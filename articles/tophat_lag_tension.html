@@ -19,7 +19,7 @@
         var res = await fetch(point);
         var ok = await res.text();
         if (ok !== "true") {
-            go("/password.html");
+            go("/coltontrece/password.html");
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -53,10 +53,10 @@
     <title>Colton-Trece Brothers</title>
 </head>
 <header class="p-5 border-b shadow-lg shadow-gray-200 flex space-x-5 animate-titlebar-on-load">
-    <button onclick="location.assign(`/${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">Colton-Trece Brothers</button>
+    <button onclick="location.assign(`/coltontrece/${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">Colton-Trece Brothers</button>
     <div class="w-px bg-gray-400"></div>
-    <button onclick="location.assign(`/news.html${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">News</button>
-    <button onclick="location.assign(`/about.html${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">About</button>
+    <button onclick="location.assign(`/coltontrece/news.html${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">News</button>
+    <button onclick="location.assign(`/coltontrece/about.html${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">About</button>
     <div class="flex-grow"></div>
     <button onclick="alert('No dark mode yet. Sorry!')" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">Settings</button>
 </header>
