@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+        function go(path) {
+            // 1. Create a URL object for your destination path
+            const targetUrl = new URL(path, window.location.origin);
+
+            // 2. Append the current page's search parameters
+            targetUrl.search = window.location.search;
+
+            // 3. Navigate safely with the parameters preserved
+            window.location.assign(targetUrl.href);
+        }
+        var point = new URL("https://plygon1.pythonanywhere.com/");
+        point.search = location.search;
+        var res = await fetch(point);
+        var ok = await res.text();
+        if (ok !== "true") {
+            go("/password.html");
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --animate-move-on-load: slideIn 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+            --animate-titlebar-on-load: slideDown 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+
+            @keyframes slideIn {
+                0% { 
+                    transform: translateX(0px); 
+                    opacity: 0; 
+                }
+                100% { 
+                    transform: translateX(10px); 
+                    opacity: 1; 
+                }
+            }
+            @keyframes slideDown {
+                0% { 
+                    transform: translateY(-10px); 
+                    opacity: 0; 
+                }
+                100% { 
+                    transform: translateY(0px); 
+                    opacity: 1; 
+                }
+            }
+        }
+    </style>
+    <title>Colton-Trece Brothers</title>
+</head>
+<header class="p-5 border-b shadow-lg shadow-gray-200 flex space-x-5 animate-titlebar-on-load">
+    <button onclick="location.assign(`/${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">Colton-Trece Brothers</button>
+    <div class="w-px bg-gray-400"></div>
+    <button onclick="location.assign(`/news.html${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">News</button>
+    <button onclick="location.assign(`/about.html${window.location.search}`);" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">About</button>
+    <div class="flex-grow"></div>
+    <button onclick="alert('No dark mode yet. Sorry!')" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out">Settings</button>
+</header>
+    <body class="flex flex-col h-screen overflow-hidden">
+        <div class="p-20 space-y-5 flex-grow overflow-y-auto">
+            <div class="relative aspect-video overflow-hidden shrink-0 max-h-120 w-full">
+        <img
+            src="/img/sunflower.png"
+            alt="Example Image"
+            class="w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        <h1 class="absolute bottom-4 left-4 font-serif text-4xl font-bold text-white">
+            Colton steals Trece's sunflower, and Keith fornicates with Cameron
+        </h1>
+    </div>
+        <p class="font-serif text-xl">Not much is happening today. There are tensions rising between <a href="javascript:location.assign(`/articles/tophat_lag_tension.html${location.search}`)" class="underline text-blue-500 hover:text-blue-400">the TopHat brothers and the Lag brothers</a>, however tensions aren't extreme yet. When it gets more extreme, we will inform you.</p>
+        <p class="font-serif text-xl">Colton performed a robbery of the prized possession of Trece, which is their sunflower, which is on screen. Trece has yet to respond to us about the situation between Colton and Trece (even though Colton and Trece are the ones writing Colton-Trece brothers).</p>
+        <p class="font-serif text-xl">Keith, well known for being a libertine, also made the decision to sexually interact and fornicate with Cameron, who is also well known for being even more of a libertine. Neither Keith or Cameron have been held guilty or charged by the police, nor will either of them respond to the Colton-Trece brothers.</p>
+        <p class="font-serif text-xl">Thank you for reading today's article of Colton-Trece brothers.</p>
+        <div class="h-10"></div>
+        <div class="flex"><div class="flex-grow"></div><button onclick="location.assign(`/news.html${location.search}`)" class="cursor-pointer tracking-normal hover:tracking-widest active:tracking-normal border-b border-white hover:border-black transition-all duration-500 ease-out font-serif">More news - Written by Colton0422, proofread by plygon1</button></div>
+    </div>
+</body>
+<script>
+    document.querySelectorAll('a.preserve-params').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // Get the current page's search params
+    const currentParams = new URLSearchParams(window.location.search);
+    
+    // Get the destination link
+    const url = new URL(link.href);
+    
+    // Merge existing params (existing params on the link are overwritten if duplicates exist)
+    for (const [key, value] of currentParams.entries()) {
+      url.searchParams.set(key, value);
+    }
+    
+    // Navigate to the updated URL
+    window.location.href = url.toString();
+  });
+});
+
+</script>
+</html>
